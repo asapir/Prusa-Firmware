@@ -74,6 +74,8 @@ const float bed_skew_angle_extreme = (0.25f * M_PI / 180.f);
  * MK2: center front, center right, center rear, center left.
  * MK25 and MK3: front left, front right, rear right, rear left
  */
+// MK3
+#if ((MOTHERBOARD == BOARD_EINSY_1_0a))
 const float bed_ref_points_4[] PROGMEM = {
 	37.f - BED_PRINT_ZERO_REF_X - X_PROBE_OFFSET_FROM_EXTRUDER - SHEET_PRINT_ZERO_REF_X,
 	18.4f - BED_PRINT_ZERO_REF_Y - Y_PROBE_OFFSET_FROM_EXTRUDER - SHEET_PRINT_ZERO_REF_Y,
@@ -87,6 +89,16 @@ const float bed_ref_points_4[] PROGMEM = {
 	37.f - BED_PRINT_ZERO_REF_X - X_PROBE_OFFSET_FROM_EXTRUDER  - SHEET_PRINT_ZERO_REF_X,
 	210.4f - BED_PRINT_ZERO_REF_Y - Y_PROBE_OFFSET_FROM_EXTRUDER - SHEET_PRINT_ZERO_REF_Y
 };
+#endif
+// MK25
+#if ((MOTHERBOARD == BOARD_RAMBO_MINI_1_0) || (MOTHERBOARD == BOARD_RAMBO_MINI_1_3))
+const float bed_ref_points_4[] PROGMEM = {
+    10.f - BED_ZERO_REF_X, 10.4f - BED_ZERO_REF_Y,
+    218.f - BED_ZERO_REF_X, 10.4f - BED_ZERO_REF_Y,
+    218.f - BED_ZERO_REF_X, 202.4f - BED_ZERO_REF_Y,
+    10.f - BED_ZERO_REF_X, 202.4f - BED_ZERO_REF_Y
+};
+#endif
 
 #else
 

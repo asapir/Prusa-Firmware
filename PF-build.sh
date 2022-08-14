@@ -191,7 +191,7 @@ if ! type zip > /dev/null; then
 	fi
 fi
 # Check python ... needed during language build
-if ! type python > /dev/null; then
+if ! type python3 > /dev/null; then
 	if [ $TARGET_OS == "windows" ]; then
 		echo "$(tput setaf 1)Missing 'python' which is important to run this script"
 		exit 4
